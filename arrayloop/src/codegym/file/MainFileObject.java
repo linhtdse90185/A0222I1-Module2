@@ -1,10 +1,9 @@
 package codegym.file;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFile {
+public class MainFileObject {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
 
@@ -12,11 +11,10 @@ public class MainFile {
         students.add(new Student("Tu", 19, "A0222I1", true));
         students.add(new Student("Duyet", 21, "A0222I2", true));
         students.add(new Student("Thanh", 20, "A0222I2", false));
-        File file = new File("test");
-        System.out.println(file.getAbsolutePath());
-//        FileUtils.writeToFile(students);
 
-//        List<Student> result = FileUtils.getStudentFromFile("student.txt");
-//        result.stream().forEach(System.out::println);
+//        FileUtils.writeObjectFile(students, "student.dat");
+
+        List<Student> result = FileUtils.readObjectFile("student.dat");
+        result.stream().forEach(System.out::println);
     }
 }

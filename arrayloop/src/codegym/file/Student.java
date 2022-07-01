@@ -1,10 +1,22 @@
 package codegym.file;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
+    private static final long serialVersionUID = 1;
     private String name;
     private int age;
     private String className;
     private boolean sex;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     private Student(String name, int age) {
         this.name = name;
@@ -65,6 +77,7 @@ public class Student {
                 ", age=" + age +
                 ", className='" + className + '\'' +
                 ", sex=" + sex +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
